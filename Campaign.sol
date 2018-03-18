@@ -27,7 +27,7 @@ contract Campaign {
     }
 
     function createRequest(string description, uint value, address recipient) public restricted {
-        Request newRequest = Request({
+        Request memory newRequest = Request({
             description: description,
             value: value,
             recipient: recipient,
