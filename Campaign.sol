@@ -12,7 +12,7 @@ contract Campaign {
     uint public minimumContribution;
     address[] public approvers;
     modifier restricted() {
-        require(msg.sender === manager);
+        require(msg.sender == manager);
         _;
     }
 
