@@ -11,6 +11,10 @@ contract Campaign {
     address public manager;
     uint public minimumContribution;
     address[] public approvers;
+    modifier restricted() {
+        require(msg.sender === manager);
+        _;
+    }
 
     function Campaign(uint minimum) public {
         manager = msg.sender;
